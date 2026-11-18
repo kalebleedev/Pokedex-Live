@@ -1,0 +1,43 @@
+{% extends "pokedex/base.html"%}
+
+{% block title %}
+        {{ pokemon.name|capfirst}} | Pokedex Live
+{% endblock %}
+
+{% block content %}
+
+<a href="{% url 'home'%}"> <- Back to Pokedex</a>
+
+<div class="pokemon-detail">
+    <h1>{{pokemon.name|capfirst}}</h1>
+    <img
+        src="{{pokemon.images}}"
+        alt="{{pokemon.name}}"
+        width="250"
+     />
+
+     <p>Pokedex Number: {{pokemon.id}}</p>
+     <p>Height: {{pokemon.height}}m</p>
+     <p>Weight: {{pokemon.weight}}kg</p>
+
+     <h2>Types</h2>
+     {% for type in pokemon.type %}
+        <span>{{type|capfirst}}</span>
+     {% endfor %}
+
+     <h2>Abilities</h2>
+     {% for ability in pokemon.abilities %}
+        <span>{{ability|capfirst}}</span>
+     {% endfor %}
+
+     <h2>Base Stats</h2>
+     {% for stat, value in pokemon.stats.items %}
+        <p>{{stat|capfirst}}: {{value}}</p>
+     {% empty %}
+        <p>No stats available.</p>
+     {% endfor %}
+    
+
+</div>
+
+{% endblock %}

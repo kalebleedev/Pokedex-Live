@@ -12,12 +12,12 @@
 
 <div class="pager">
     {% if has_previous %}
-        <a href="?page={{page:add:'-1'}}">Previous</a>
+        <a href="?page={{page|add:'-1'}}">Previous</a>
     {% endif %}
 
     <span>Page {{page}}</span>
     {% if has_next %}
-        <a href="?page={{page:add:'1'}}">Next</a>
+        <a href="?page={{page|add:'1'}}">Next</a>
     {% endif %}
 
 </div>
