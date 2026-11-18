@@ -1,0 +1,7 @@
+{ % extends "pokedex/base.html" %}
+
+{% block content %}
+<h1>Oh no!</h1>
+<p>We could not reach PokeAPI right now. Check your internet connection and try again in a moment.</p>
+<p><a href="{% url 'home' %}">Back to the Pokedex</a></p>
+{% endblock %}

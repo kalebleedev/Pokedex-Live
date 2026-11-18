@@ -1,0 +1,5 @@
+<a class="card" href="{% url 'detail' p.name %}">
+    <img src="{{p.image}}" alt="{{p.name}}" loading="lazy">
+    <span class="num">#{{p.id}}</span>
+    <h3>{{p.name|capfirst}}</h3>
+</a>
